@@ -1161,6 +1161,711 @@
       <td colspan="5">Время доставки</td>
     </tr>
   </tbody>
+        
+  <tbody>
+    <tr>
+      <td>28</td>
+      <td>Указать время в диапозоне 7-21, например 16</td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> ItPossibleToDeliver - true </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+      
+  <tbody>
+    <tr>
+      <td>29</td>
+      <td>Указать время доставки - 7</td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> ItPossibleToDeliver - true </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>      
+  
+  <tbody>
+    <tr>
+      <td>30</td>
+      <td>Указать время доставки - 8</td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> ItPossibleToDeliver - true </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>    
+        
+ <tbody>
+    <tr>
+      <td>31</td>
+      <td>Указать время доставки - 6</td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> ItPossibleToDeliver - false</td>
+      <td rowspan="3">:x:FAILED</td>
+      <td rowspan="3"><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-23">BUG-76</a></p></td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>Указать время вне диапозона 7-21, например 4</td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> ItPossibleToDeliver - false</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>Указать время доставки - 22</td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> ItPossibleToDeliver - false</td>
+    </tr>
+  </tbody>      
+        
+  <tbody>
+    <tr>
+      <td>34</td>
+      <td>Указать время доставки - 20</td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> ItPossibleToDeliver - true </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>      
+  
+  <tbody>
+    <tr>
+      <td>35</td>
+      <td>Указать время доставки - 21</td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> ItPossibleToDeliver - true </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>            
+        
+   <tbody>
+    <tr>
+      <td>36</td>
+      <td>Указание несуществующего времени, например, 25 часов</td>
+            <td>Код и статус ответа 400 Bad request </br> Ошибок в структуре ответа нет</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-24">BUG-77</a></p></td>
+    </tr>
+  </tbody>        
+        
+   <tbody>
+    <tr>
+      <td colspan="5">hostDeliveryCost - 23 руб. и clientDeliveryCost - 0 руб</td>
+    </tr>
+  </tbody> 
+  
+  <tbody>
+    <tr>
+      <td>37</td>
+      <td>0 шт и 0 кг</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет</td>
+      <td rowspan="3">:x:FAILED</td>     
+      <td rowspan="3"><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-25">BUG-78</a></p></td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>1 шт и 0 кг</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет</td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>0 шт и 0.1 кг</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет</td>
+    </tr>    
+  </tbody>
+ 
+ <tbody>
+    <tr>
+      <td>40</td>
+      <td>1 шт и 0.1 кг</td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> hostDeliveryCost - 23 руб. и clientDeliveryCost - 0 руб</td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody> 
+  
+  <tbody>
+    <tr>
+      <td>41</td>
+      <td>6 шт и 0.1 кг </td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> hostDeliveryCost - 23 руб. и clientDeliveryCost - 0 руб</td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody> 
+  
+  <tbody>
+    <tr>
+      <td>42</td>
+      <td>7 шт и 0.1 кг</td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> hostDeliveryCost - 23 руб. и clientDeliveryCost - 0 руб </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody> 
+  
+  <tbody>
+    <tr>
+      <td>43</td>
+      <td>1 шт и 2.4 кг </td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> hostDeliveryCost - 23 руб. и clientDeliveryCost - 0 руб </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody> 
+  
+  <tbody>
+    <tr>
+      <td>44</td>
+      <td>1 шт и 2.5 кг</td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> hostDeliveryCost - 23 руб. и clientDeliveryCost - 0 руб </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody> 
+  
+  <tbody>
+    <tr>
+      <td colspan="5">hostDeliveryCost - 43 руб. и clientDeliveryCost - 0 руб</td>
+    </tr>
+  </tbody> 
+  
+ <tbody>
+    <tr>
+      <td>45</td>
+      <td>8 шт и 0.1 кг</td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> hostDeliveryCost - 43 руб. и clientDeliveryCost - 0 руб </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>  
+ 
+ <tbody>
+    <tr>
+      <td>46</td>
+      <td>9 шт и 0.1 кг</td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> hostDeliveryCost - 43 руб. и clientDeliveryCost - 0 руб </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>  
+  
+  <tbody>
+    <tr>
+      <td>47</td>
+      <td>13 шт и 0.1 кг</td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> hostDeliveryCost - 43 руб. и clientDeliveryCost - 0 руб </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>  
+  
+  <tbody>
+    <tr>
+      <td>48</td>
+      <td>14 шт и 0.1 кг </td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> hostDeliveryCost - 43 руб. и clientDeliveryCost - 0 руб </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>  
+  
+  <tbody>
+    <tr>
+      <td>49</td>
+      <td>1 шт и 2.6 кг</td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> hostDeliveryCost - 43 руб. и clientDeliveryCost - 0 руб </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>  
+  
+  <tbody>
+    <tr>
+      <td>50</td>
+      <td>1 шт и 2.7 кг </td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> hostDeliveryCost - 43 руб. и clientDeliveryCost - 0 руб </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>  
+  
+  <tbody>
+    <tr>
+      <td>51</td>
+      <td>1 шт и 5.9 кг </td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> hostDeliveryCost - 43 руб. и clientDeliveryCost - 0 руб </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>  
+  
+  <tbody>
+    <tr>
+      <td>52</td>
+      <td>1 шт и 6 кг </td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> hostDeliveryCost - 43 руб. и clientDeliveryCost - 0 руб </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>  
+  
+  <tbody>
+    <tr>
+      <td colspan="5">clientDeliveryCost - 99 руб</td>
+    </tr>
+  </tbody> 
+  
+  <tbody>
+    <tr>
+      <td>53</td>
+      <td>15 единиц товаров в заказе </td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> hostDeliveryCost - 43 руб. и clientDeliveryCost - 99 руб </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>  
+ 
+ <tbody>
+    <tr>
+      <td>54</td>
+      <td>Вес заказа больше 6, например 6,1 кг </td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> hostDeliveryCost - 43 руб. и clientDeliveryCost - 99 руб </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>  
+ 
+ <tbody>
+    <tr>
+      <td colspan="5">Формат XML</td>
+    </tr>
+  </tbody> 
+ 
+ <tbody>
+    <tr>
+      <td>55</td>
+      <td>Передать в body только значение веса и пустой тег для количества <productsCount/></td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет</td>
+      <td rowspan="3">:x:FAILED</td>     
+      <td rowspan="3"><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-25">BUG-79</a></p></td>
+    </tr>
+    <tr>
+      <td>56</td>
+      <td>Передать в body только значение количества и пустой тег для веса <productsWeight/></td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет</td>
+    </tr>
+    <tr>
+      <td>57</td>
+      <td>Передать в body только пустые теги для количества и веса</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет</td>
+    </tr>    
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>58</td>
+      <td>Незаполненный xml</td>
+            <td>Код и статус ответа 400 Bad request </br> Не все необходимые параметры переданы <br/> Ошибок в структуре ответа нет</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-27">BUG-80</a></p></td>
+    </tr>
+  </tbody>  
+ 
+ <tbody>
+    <tr>
+      <td colspan="5">Невалидные данные в тег productsCount (валидные в тег productsWeight, например 5.1)</td>
+    </tr>
+  </tbody> 
+ 
+ <tbody>
+    <tr>
+      <td>59</td>
+      <td>Передать буквенное значение, например - ab</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет</td>
+      <td rowspan="4">:x:FAILED</td>     
+      <td rowspan="4"><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-51">BUG-81</a></p></td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>Передать отрицательное значение, например -1</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет</td>
+    </tr>
+    <tr>
+      <td>61</td>
+      <td>Передать спец.символы, например ?@</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет</td>
+    </tr> 
+    <tr>
+      <td>62</td>
+      <td>Передать пустое значение</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет</td>
+    </tr>       
+  </tbody>       
+ 
+ <tbody>
+    <tr>
+      <td colspan="5">Невалидные данные в тег productsWeight (валидные в тег productsCount, например 2)</td>
+    </tr>
+  </tbody>
+ 
+<tbody>
+    <tr>
+      <td>63</td>
+      <td>Передать буквенное значение, например - ab</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет</td>
+      <td rowspan="4">:x:FAILED</td>     
+      <td rowspan="4"><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-51">BUG-81</a></p></td>
+    </tr>
+    <tr>
+      <td>64</td>
+      <td>Передать отрицательное значение, например -1</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет</td>
+    </tr>
+    <tr>
+      <td>65</td>
+      <td>Передать спец.символы, например ?@</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет</td>
+    </tr> 
+    <tr>
+      <td>66</td>
+      <td>Передать пустое значение</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет</td>
+    </tr>       
+  </tbody>               
+   
+  <tbody>
+    <tr>
+      <td colspan="5">
+      <bold><b>Добавление продуктов в корзину PUT /api/v1/orders/:id</b></bold>
+      </td>
+    </tr>
+  </tbody> 
+  
+  <tbody>
+    <tr>
+      <td colspan="5">ID корзины</td>
+    </tr>
+  </tbody> 
+
+<tbody>
+    <tr>
+      <td>67</td>
+      <td>Продукты в корзину добавляются, если ввести корректные данные из требований, например ID корзины - 1 и {"productsList": [ {"id": 1, "quantity": 4},{"id": 5, "quantity": 2} ]} </td>
+      <td>Код и статус ответа 200 ОК <br/> Ошибок в структуре ответа нет <br/> Продукты в корзину добавлены</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>68</td>
+      <td>Продукты в корзину не добавляются если передать несуществующий ID корзины (например 25) и корректные данные в тело </td>
+      <td>Код и статус ответа 404 Not found <br/> Ошибок в структуре ответа нет <br/> Продукты в корзину не добавлены</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>69</td>
+      <td>Продукты в корзину не добавляются если передать несуществующий ID корзины (например 0) и корректные данные в тело</td>
+      <td>Код и статус ответа 404 Not found <br/> Ошибок в структуре ответа нет <br/> Продукты в корзину не добавлены</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td colspan="5">
+      <bold><b>Body<b/></bold>
+      </td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td colspan="5">
+      <bold>id продукта (количество вводим корректное, например - 1)</bold>
+      </td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>70</td>
+      <td>Продукты в корзину добавляются если ввести в body существующий id продукта (например 1 и 5)</td>
+      <td>Код и статус ответа 200 ОК <br/> Ошибок в структуре ответа нет <br/> Продукты в корзину добавлены</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+   
+  <tbody>
+    <tr>
+      <td>71</td>
+      <td>Продукты в набор не добавляются если ввести в body несуществующий id продукта (например 0)</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td rowspan="3">:x:FAILED</td>
+      <td rowspan="3"><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-29">BUG-82</a></p></td>
+    </tr>
+    <tr>
+      <td>72</td>
+      <td>Продукты в набор не добавляются если ввести в body несуществующий id продукта (например -1)</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены </td>
+    </tr>
+    <tr>
+      <td>73</td>
+      <td>Продукты в набор не добавляются если ввести в body несуществующий id продукта (например 114 и 115)</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>74</td>
+      <td>Продукты в корзину не добавляются если ввести в body id продукта в виде строки, а не числа (например "пять" и "семь")</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в корзину не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-30">BUG-83</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>75</td>
+      <td>Продукты в корзину не добавляются если ввести в body id продукта в виде строки, а не числа (например "2")</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в корзину не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-31">BUG-84</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>76</td>
+      <td>null в id продукта</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в корзину не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-29">BUG-85</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>77</td>
+      <td>Пустое значение в id продукта " "</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в корзину не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-30">BUG-86</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>78</td>
+      <td>Удалить значение и ключ id продукта из тела</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> "Не все необходимые параметры переданы" <br/> Продукты в корзину не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-28">BUG-87</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td colspan="5">quantity (в id вводим корректные значения, например - 1 и 5)</td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>79</td>
+      <td>Добавить в корзину 0 продуктов</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в корзину не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-40">BUG-88</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>80</td>
+      <td>Количество товара дробным числом, например 1.5</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в корзину не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-32">BUG-89</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>81</td>
+      <td>Добавить в корзину количество товара превышающее наличие на складах, например 100 (id продукта 4)</td>
+      <td>Код и статус ответа 409 Conflict <br/> "Нет склада, способного обработать Ваш заказ" <br/> Продукты в корзину не добавлены</td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>82</td>
+      <td>Добавить количество продукта строкой, например - "один"</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в корзину не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-33">BUG-90</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>83</td>
+      <td>Продукты в корзину не добавляются если ввести в body quantity продукта в виде строки, а не числа (например "2")</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в корзину не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-31">BUG-91</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>84</td>
+      <td>Отрицательное значение в количестве товара, например - 1</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в корзину не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-34">BUG-92</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>85</td>
+      <td>Продукты в корзину не добавляются если ввести в body количество продукта в виде булевого значения, а не числа (например true)</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в корзину не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-36">BUG-93</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>86</td>
+      <td>Ввести null в quantity</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-35">BUG-94</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>87</td>
+      <td>Оставить body не заполненным </td>
+      <td>Код и статус ответа 400 Bad request <br/> "Не все необходимые параметры были переданы" <br/> Ошибок в структуре ответа нет <br/> Продукты в корзину не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-38">BUG-95</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>88</td>
+      <td>Пустой json {} </td>
+      <td>Код и статус ответа 400 Bad request <br/> "Не все необходимые параметры были переданы" <br/> Ошибок в структуре ответа нет <br/> Продукты в корзину не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-37">BUG-96</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>89</td>
+      <td>Передать в body объект вместо массива  </td>
+      <td>Код и статус ответа 400 Bad request <br/> "Не все необходимые параметры были переданы" <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-39">BUG-97</a></p></td>
+    </tr>
+  </tbody>
+  
+<tbody>
+    <tr>
+      <td colspan="5">
+      <bold><b>Получение списка продуктов добавленных в корзину GET /api/v1/orders/:id</b></bold>
+      </td>
+    </tr>
+  </tbody> 
+
+<tbody>
+    <tr>
+      <td>90</td>
+      <td>Запрос списка продуктов по валидному ID, например 1</td>
+      <td>Код и статус ответа 200 ОК <br/> Ошибок в структуре ответа нет</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>91</td>
+      <td>Запрос списка продуктов по несуществующему ID, например 15</td>
+      <td>Код и статус ответа 404 Not found <br/> Ошибок в структуре ответа нет</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>92</td>
+      <td>Заполнен необязательный header Authorization</td>
+      <td>Код и статус ответа 200 ОК <br/> Ошибок в структуре ответа нет</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>93</td>
+      <td>Заполнен необязательный header Authorization</td>
+      <td>Код и статус ответа 200 ОК <br/> Ошибок в структуре ответа нет</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+
+<tbody>
+    <tr>
+      <td colspan="5">
+      <bold><b>Удаление корзины DELETE /api/v1/orders/:id</b></bold>
+      </td>
+    </tr>
+  </tbody> 
+
+<tbody>
+    <tr>
+      <td>94</td>
+      <td>Удаление id существующей корзины, например 2</td>
+      <td>Код и статус ответа 200 OK <br/> Ошибок в структуре ответа нет <br/> Данные по ID корзины удалены из БД </td>
+      <td>:x:FAILED</td>
+      <td rowspan="2"><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-12">BUG-98</a></p></td>
+        </tr>
+    <tr>
+      <td>95</td>
+      <td>Удаление уже удаленного id корзины, например 2</td>
+      <td>Код и статус ответа 404 Not found <br/> Ошибок в структуре ответа нет <br/> В БД изменений не произошло </td>
+      <td>:no_entry:BLOCKED</td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>96</td>
+      <td>Удаление несуществующего id корзины, например 15</td>
+      <td>Код и статус ответа 404 Not found <br/> Ошибок в структуре ответа нет <br/> В БД изменений не произошло</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
 </table>
         
 </details>
