@@ -648,7 +648,7 @@
 1. Проанализируй требования к мобильному приложению Яндекс.Метро из предыдущего урока.
 2. Напиши чек-лист для тестирования мобильного приложения на часть требований, выделенных жирным шрифтом. При необходимости визуализируй требования через mindmap или блок-схемы.
 3. Протестируй мобильное приложение в эмуляторе с помощью Android Studio или на своём Android-устройстве и заведи баг-репорты в YouTrack.
-4. Напиши отчёт о тестировании. Что можешь рассказать команде о статусе протестированной части продукта?
+4. Напиши отчёт о тестировании (*). Что можешь рассказать команде о статусе протестированной части продукта?
 
 <details><summary>Требования к мобильному приложению Яндекс.Метро</summary>
 
@@ -754,8 +754,8 @@
 
 ### Решение:white_check_mark:
 
-<details><summary>Чек-лист тестирования мобильного приложения</summary>
-
+<details><summary>Чек-лист тестирования мобильного приложения</summary> <br/> 
+        
 <table>
   <thead>
     <tr>
@@ -763,7 +763,7 @@
       <th>Описание проверки</th>
       <th>Статус</th>
       <th>Ссылка на баг репорт</th>
-      <th>Треюование</th>      
+      <th>Требование</th>      
     </tr>
   </thead>
   
@@ -773,7 +773,7 @@
       <bold><b>Карточка маршрута</b></bold>
       </td>
     </tr>
-  </tbody>
+  </tbody> 
   
   <tbody>
     <tr>
@@ -781,54 +781,325 @@
       <td>В карточке маршрута отображается кнопка Детали маршрута</td>
       <td>:white_check_mark:  PASSED</td>
       <td></td>
-     <td>1.1</td>       
+      <td>1.1</td>      
     </tr>
-  </tbody>      
+  </tbody>
+        
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Если текущее время превышает время окончания маршрута, то временной интервал маршрута обновляется</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-4">BUG-47</a></p></td>
+      <td>1.2</td>
+    </tr>
+  </tbody> 
         
   <tbody>
     <tr>
       <td colspan="5">
-      <bold><b>ID набора</b></bold>
+      <bold><b>Выбор станции</b></bold>
       </td>
     </tr>
-  </tbody>
+  </tbody>  
+        
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td>Станцию можно выбрать тапом по схеме метро</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+      <td>2.1</td>      
+    </tr>
+  </tbody>    
+        
+  <tbody>
+    <tr>
+      <td>4</td>
+      <td>Станцию можно выбрать по иконке i из разных карточек маршрута</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+      <td>2.1</td>      
+    </tr>
+  </tbody> 
   
+  <tbody>
+    <tr>
+      <td>5</td>
+      <td>После выбора станции тапом на i и закрытия карточки станции, происходит возврат на экран поиска</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-41">BUG-48</a></p></td>
+      <td>2.1</td>
+    </tr>
+  </tbody> 
+        
+  <tbody>
+    <tr>
+      <td>6</td>
+      <td>Станцию можно выбрать в поиске и нажать на нее</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+      <td>2.1</td>      
+    </tr>
+  </tbody>       
+        
+ <tbody>
+    <tr>
+      <td>7</td>
+      <td>Точка выбранной станции уменьшается на схеме</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+      <td>2.2</td>      
+    </tr>
+  </tbody>        
  
+ <tbody>
+    <tr>
+      <td>8</td>
+      <td>На точке выбранной станции появляется пин цвета линии или специальный пин для закрытой станции</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-44">BUG-49</a></p></td>
+      <td>2.2</td>
+    </tr>
+  </tbody>        
         
+  <tbody>
+    <tr>
+      <td>9</td>
+      <td>Выбранная станция сохраняется в истории</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-43">BUG-50</a></p></td>
+      <td>2.2</td>
+    </tr>
+  </tbody> 
         
-        | №     | Описание проверки     |   Статус   | Ссылка на баг-репорт|Требование|
-|:-----:|:----------------------|:-----------|:--------------------:|:---------:|
-| 1| В карточке маршрута отображается кнопка Детали маршрута|:white_check_mark:PASSED||1.1|
-| 2| Если текущее время превышает время окончания маршрута, то временной интервал маршрута обновляется|:x:FAILED| [BUG-47](https://vladislavazakharova.youtrack.cloud/issue/PQA-4)|1.2| 
-| 3| Станцию можно выбрать тапом по схеме метро|:white_check_mark:PASSED| | 2.1|
-| 4| Станцию можно выбрать по иконке i из разных карточек маршрута |:white_check_mark:PASSED||2.1|
-| 5|После выбора станции тапом на i и закрытия карточки станции, происходит возврат на экран поиска|:x:FAILED| [BUG-48](https://vladislavazakharova.youtrack.cloud/issue/PQA-41)|2.1| 
-| 6| Станцию можно выбрать в поиске и нажать на нее |:white_check_mark:PASSED||2.1|
-| 7|Точка выбранной станции уменьшается на схеме |:white_check_mark:PASSED||2.2|
-| 8| На точке выбранной станции появляется пин цвета линии или специальный пин для закрытой станции|:x:FAILED| [BUG-49](https://vladislavazakharova.youtrack.cloud/issue/PQA-44)|2.2|
-| 9| Выбранная станция сохраняется в истории|:x:FAILED| [BUG-50](https://vladislavazakharova.youtrack.cloud/issue/PQA-43)|2.2| 
-| 10| При нажатии на поле «Откуда» или «Куда» раскрывается список, содержащий станции, которые пользователь выбирал ранее|:x:FAILED| [BUG-51](https://vladislavazakharova.youtrack.cloud/issue/PQA-42)| 2.2|
-| 11| Список ранее выбранных станций должен сохраниться в новой версии приложения|:x:FAILED| [BUG-52](https://vladislavazakharova.youtrack.cloud/issue/PQA-45)|2.2|
-| 12| Шрифт названия выбранной станции становится bold|:white_check_mark:PASSED||2.2|
-| 13|Детали маршрута открываются по тапу на кнопку Деталей маршрута в карточке маршрута|:white_check_mark:PASSED||3.1|
-| 14| Детали маршрута открываются по свайпу списка маршрутов вверх (только для смартфонов в портретной ориентации)|:white_check_mark:PASSED| | 3.1|
-| 15| При смене ориентации с портретной на ландшафтную детали маршрута отображаются в левой части экрана|:x:FAILED|[BUG-53](https://vladislavazakharova.youtrack.cloud/issue/PQA-46)|3.2|
-| 16| При отсутствии интернет-соединения появляется уведомление об ошибке|:x:FAILED| [BUG-54](https://vladislavazakharova.youtrack.cloud/issue/PQA-3)|4|
-| 17|Карточки маршрута и станции и поля поиска отображаются в левой части экрана при альбомной ориентации экрана|:white_check_mark:PASSED||5|
-| 18| При смене ориентации экрана на альбомную масштаб построенного маршрута не должен увеличиться или уменьшиться|:x:FAILED|[BUG-55](https://vladislavazakharova.youtrack.cloud/issue/PQA-47)|5|
-| 19| При нажатии на станцию при помощи лонг-тапа открывается карточка станции с кнопками «Отсюда»/«Сюда»|:x:FAILED| [BUG-56](https://vladislavazakharova.youtrack.cloud/issue/PQA-48)|6|
-| 20|Схема не смещается вверх/вниз/влево/вправо при лонгтапе по станции|:x:FAILED| [BUG-57](https://vladislavazakharova.youtrack.cloud/issue/PQA-49)|6|
-| 21| При скролле лонгтапом можно выбрать нужную станцию|:white_check_mark:PASSED||7|
-| 22|При выборе станции с помощью скролла лонгтапом схема остается неподвижной|:x:FAILED| [BUG-58](https://vladislavazakharova.youtrack.cloud/issue/PQA-50)|7|
-| 23| При попадании на область клика точки станции или её названия на точку ставится пин|:white_check_mark:PASSED||7|
-| 24| При попадании на область клика точки станции или её названия точка станции уменьшается|:white_check_mark:PASSED||7|  
-| 25| При попадании на область клика точки станции или её названия название станции выделяется жирным шрифтом|:white_check_mark:PASSED||7|
-| 26| При попадании на область клика точки станции или её названия появляется карточка станции|:white_check_mark:PASSED||7|
-| 27|Пин на станции и выделение станции пропадает, когда она не попадает в зону клика при лонг-тапе |:x:FAILED| [BUG-59](https://vladislavazakharova.youtrack.cloud/issue/PQA-1)|7|
-| 28|Если движение заканчивается на пустой области при лонг-тапе, карточка станции закрывается|:x:FAILED| [BUG-60](https://vladislavazakharova.youtrack.cloud/issue/PQA-2)|7|
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td>При нажатии на поле «Откуда» или «Куда» раскрывается список, содержащий станции, которые пользователь выбирал ранее</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-42">BUG-51</a></p></td>
+      <td>2.2</td>
+    </tr>
+  </tbody>       
+        
+ <tbody>
+    <tr>
+      <td>11</td>
+      <td>Список ранее выбранных станций должен сохраниться в новой версии приложения</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-45">BUG-52</a></p></td>
+      <td>2.2</td>
+    </tr>
+  </tbody>        
+  
+ <tbody>
+    <tr>
+      <td>12</td>
+      <td>Шрифт названия выбранной станции становится bold</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+      <td>2.2</td>      
+    </tr>
+  </tbody>        
+        
+ <tbody>
+    <tr>
+      <td colspan="5">
+      <bold><b>Детали маршрута</b></bold>
+      </td>
+    </tr>
+  </tbody>  
+ 
+<tbody>
+    <tr>
+      <td>13</td>
+      <td>Детали маршрута открываются по тапу на кнопку Деталей маршрута в карточке маршрута</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+      <td>3.1</td>      
+    </tr>
+  </tbody>          
+        
+<tbody>
+    <tr>
+      <td>14</td>
+      <td>Детали маршрута открываются по свайпу списка маршрутов вверх (только для смартфонов в портретной ориентации)</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+      <td>3.1</td>      
+    </tr>
+  </tbody>          
+        
+<tbody>
+    <tr>
+      <td>15</td>
+      <td>При смене ориентации с портретной на ландшафтную детали маршрута отображаются в левой части экрана</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-46">BUG-53</a></p></td>
+      <td>3.2</td>
+    </tr>
+  </tbody>           
+
+<tbody>
+    <tr>
+      <td colspan="5">
+      <bold><b>Уведомление об ошибке</b></bold>
+      </td>
+    </tr>
+  </tbody>   
+        
+<tbody>
+    <tr>
+      <td>16</td>
+      <td>При отсутствии интернет-соединения появляется уведомление об ошибке</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-3">BUG-54</a></p></td>
+      <td>4</td>
+    </tr>
+  </tbody>  
+        
+<tbody>
+    <tr>
+      <td colspan="5">
+      <bold><b>Альбомная ориентация</b></bold>
+      </td>
+    </tr>
+  </tbody>           
+        
+<tbody>
+    <tr>
+      <td>17</td>
+      <td>Карточки маршрута и станции и поля поиска отображаются в левой части экрана при альбомной ориентации экрана</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+      <td>5</td>      
+    </tr>
+  </tbody>  
+        
+<tbody>
+    <tr>
+      <td>18</td>
+      <td>При смене ориентации экрана на альбомную масштаб построенного маршрута не должен увеличиться или уменьшиться</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-47">BUG-55</a></p></td>
+      <td>5</td>
+    </tr>
+  </tbody>  
+        
+<tbody>
+    <tr>
+      <td colspan="5">
+      <bold><b>Лонг-тап</b></bold>
+      </td>
+    </tr>
+  </tbody>    
+        
+<tbody>
+    <tr>
+      <td>19</td>
+      <td>При нажатии на станцию при помощи лонг-тапа открывается карточка станции с кнопками «Отсюда»/«Сюда»</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-48">BUG-56</a></p></td>
+      <td>6</td>
+    </tr>
+  </tbody>
+        
+<tbody>
+    <tr>
+      <td>20</td>
+      <td>Схема не смещается вверх/вниз/влево/вправо при лонгтапе по станции</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-49">BUG-57</a></p></td>
+      <td>6</td>
+    </tr>
+  </tbody>        
+        
+<tbody>
+    <tr>
+      <td>21</td>
+      <td>При скролле лонгтапом можно выбрать нужную станцию</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+      <td>7</td>      
+    </tr>
+  </tbody> 
+        
+<tbody>
+    <tr>
+      <td>22</td>
+      <td>При выборе станции с помощью скролла лонгтапом схема остается неподвижной</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-50">BUG-58</a></p></td>
+      <td>7</td>
+    </tr>
+  </tbody>            
+
+<tbody>
+    <tr>
+      <td>23</td>
+      <td>При попадании на область клика точки станции или её названия на точку ставится пин</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+      <td>7</td>      
+    </tr>
+  </tbody> 
+        
+<tbody>
+    <tr>
+      <td>24</td>
+      <td>При попадании на область клика точки станции или её названия точка станции уменьшается</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+      <td>7</td>      
+    </tr>
+  </tbody>         
+        
+<tbody>
+    <tr>
+      <td>25</td>
+      <td>При попадании на область клика точки станции или её названия название станции выделяется жирным шрифтом</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+      <td>7</td>      
+    </tr>
+  </tbody>         
+        
+<tbody>
+    <tr>
+      <td>26</td>
+      <td>При попадании на область клика точки станции или её названия появляется карточка станции</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+      <td>7</td>      
+    </tr>
+  </tbody>  
+        
+<tbody>
+    <tr>
+      <td>27</td>
+      <td>Пин на станции и выделение станции пропадает, когда она не попадает в зону клика при лонг-тапе</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-1">BUG-59</a></p></td>
+      <td>7</td>
+    </tr>
+  </tbody>  
+        
+<tbody>
+    <tr>
+      <td>28</td>
+      <td>Если движение заканчивается на пустой области при лонг-тапе, карточка станции закрывается</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-2">BUG-60</a></p></td>
+      <td>7</td>
+    </tr>
+  </tbody>          
+                
+</table>      
+        
 </details>
 
-**Отчет о тестирование:**
+**Отчет о тестировании:**
 
 В результате проведенного тестирования не было выявлено критических багов. Функциональность требует небольших доработок перед следующим релизом. Считаю, что в первую очередь необходимо доработать:
 * сохранение всех выбранных станций в поиске;
@@ -1909,3 +2180,14 @@
 </table>
         
 </details>
+
+**Отчет о тестировании:** <br/>
+
+В ходе тестирования был сделан вывод, что API Яндекс.Прилавка еще не готов к релизу. Было найдено 10 критических и более 20 серьезных багов, таких как:
+* обработка системой несуществующих id продуктов; 
+* система не отображает невозможность доставки в нерабочее время;
+* возможность ввода невалидных символов, по которым отправляется запрос на склады; 
+* невозможность удалить созданную корзину из БД и другие.
+
+Стоит также детальнее проработать коды и статусы ответов, чтобы в дальнейшем пользователю было понятно в чем именно ошибка. 
+
