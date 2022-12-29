@@ -821,34 +821,346 @@
 4. Напиши отчёт о тестировании (*). Что ты можешь рассказать команде о статусе протестированной части продукта?
 
 ### Решение:white_check_mark:
-<details><summary>Чек-лист тестирования API</summary>
-        
+<details><summary>Чек-лист тестирования API</summary> <br/>
 
-| №     | Описание проверки     |  ОР        |   Статус             | Ссылка на баг-репорт|
-|:-----:|:----------------------|:-----------|:--------------------:|:--------------------:|
-| 1| Продукты в набор добавляются, если ввести корректные данные из требований: в ID набора (например 3) и в body (например id продуктов - 10 и 12 и количество - 5 и 2)|Код и статус ответа 200 ОК <br/> Ошибок в структуре ответа нет <br/> Продукты в набор добавлены|:white_check_mark:PASSED||
-| 2| Продукты в набор не добавляются если передать несуществующий ID набора (например 100) и корректные данные в тело|Код и статус ответа 404 Not found <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены |:white_check_mark:PASSED|
-| 3| Продукты в набор не добавляются если передать несуществующий ID набора (например 0) и корректные данные в тело|Код и статус ответа 404 Not found <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены |:white_check_mark:PASSED|   
-| 4| Продукты в набор добавляются если ввести в body существующий id продукта (например 4)|Код и статус ответа 200 ОК <br/> Ошибок в структуре ответа нет <br/> Продукты в набор добавлены|:white_check_mark:PASSED||
-| 5|Продукты в набор не добавляются если ввести в body несуществующий id продукта (например 0)|Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:x:FAILED| [BUG-61](https://vladislavazakharova.youtrack.cloud/issue/PQA-13)|
-| 6|Продукты в набор не добавляются если ввести в body несуществующий id продукта (например -1)|Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:x:FAILED| [BUG-62](https://vladislavazakharova.youtrack.cloud/issue/PQA-19)|
-| 7|Продукты в набор не добавляются если ввести в body несуществующий id продукта (например 114 и 115)|Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:x:FAILED| [BUG-63](https://vladislavazakharova.youtrack.cloud/issue/PQA-7)|
-| 8|Продукты в набор не добавляются если ввести в body id продукта в виде строки, а не числа (например "пять" и "семь")|Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:x:FAILED| [BUG-64](https://vladislavazakharova.youtrack.cloud/issue/PQA-8)|        
-| 9|Продукты в набор не добавляются если ввести в body id продукта в виде строки, а не числа (например "2")|Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:x:FAILED| [BUG-65](https://vladislavazakharova.youtrack.cloud/issue/PQA-20)|
-| 10| null в id продукта |Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:white_check_mark:PASSED|
-| 11| Пустое значение в id продукта " "|Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:x:FAILED|[BUG-66](https://vladislavazakharova.youtrack.cloud/issue/PQA-14)|         
-| 12| Количество продуктов равное 1|Код и статус ответа 200 ОК <br/> Ошибок в структуре ответа нет <br/> Продукты в набор добавлены|:white_check_mark:PASSED||        
-| 13|Количество товаров равное 0|Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:x:FAILED| [BUG-67](https://vladislavazakharova.youtrack.cloud/issue/PQA-15)|        
-| 14| Большое количество одного наименования, например 100 (id товара- 4)|Код и статус ответа 200 ОК <br/> Ошибок в структуре ответа нет <br/> Продукты в набор добавлены|:white_check_mark:PASSED||
-| 15|Количество товара дробным числом, например 1.5|Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:x:FAILED| [BUG-68](https://vladislavazakharova.youtrack.cloud/issue/PQA-16)|
-| 16|Отрицательное значение в количестве товара, например - 1|Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:x:FAILED| [BUG-69](https://vladislavazakharova.youtrack.cloud/issue/PQA-17)|
-| 17|Продукты в набор не добавляются если ввести в body количество продукта в виде строки, а не числа (например "2")|Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:x:FAILED| [BUG-70](https://vladislavazakharova.youtrack.cloud/issue/PQA-21)|        
-| 18|Количество продуктов в виде строки "три"|Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:x:FAILED| [BUG-71](https://vladislavazakharova.youtrack.cloud/issue/PQA-18)|
-| 19|Продукты в набор не добавляются если ввести в body количество продукта в виде булевого значения, а не числа (например, true)|Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:x:FAILED| [BUG-72](https://vladislavazakharova.youtrack.cloud/issue/PQA-9)|        
-| 20| null в quantity|Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:white_check_mark:PASSED||        
-| 21|Оставить body не заполненным |Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:x:FAILED| [BUG-73](https://vladislavazakharova.youtrack.cloud/issue/PQA-10)|
-| 22|Пустой json {}|Код и статус ответа 400 Bad request <br/> "Не все необходимые параметры были переданы" <br/> "Не все необходимые параметры были переданы" <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:x:FAILED| [BUG-74](https://vladislavazakharova.youtrack.cloud/issue/PQA-22)|        
-| 23|В body ввести объект вместо массива |Код и статус ответа 400 Bad request <br/> "Не все необходимые параметры были переданы" <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены|:x:FAILED| [BUG-75](https://vladislavazakharova.youtrack.cloud/issue/PQA-11)|        
-        
+<table>
+  <thead>
+    <tr>
+      <th>№</th>
+      <th>Описание проверки</th>
+      <th>ОР</th>
+      <th>Статус</th>
+      <th>Ссылка на баг репорт</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <td colspan="5">
+      <bold><b>Добавление продуктов в набор POST /api/v1/kits/:id/products</b></bold>
+      </td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td colspan="5">
+      <bold><b>ID набора</b></bold>
+      </td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Продукты в набор добавляются, если ввести корректные данные из требований: в ID набора (например 3) и в body (например id продуктов - 10 и 12 и количество - 5 и 2)</td>
+      <td>Код и статус ответа 200 ОК <br/> Ошибок в структуре ответа нет <br/> Продукты в набор добавлены</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>Продукты в набор не добавляются если передать несуществующий ID набора (например 100) и корректные данные в тело</td>
+      <td>Код и статус ответа 404 Not found <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td>Продукты в набор не добавляются если передать несуществующий ID набора (например 0) и корректные данные в тело</td>
+      <td>Код и статус ответа 404 Not found <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td colspan="5">
+      <bold><b>Body<b/></bold>
+      </td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td colspan="5">
+      <bold>id продукта (количество вводим корректное, например - 1)</bold>
+      </td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>4</td>
+      <td>Продукты в набор добавляются если ввести в body существующий id продукта (например 4)</td>
+      <td>Код и статус ответа 200 ОК <br/> Ошибок в структуре ответа нет <br/> Продукты в набор добавлены</td>
+      <td>:white_check_mark:  PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+   
+  <tbody>
+    <tr>
+      <td>5</td>
+      <td>Продукты в набор не добавляются если ввести в body несуществующий id продукта (например 0)</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-13">BUG-61</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>6</td>
+      <td>Продукты в набор не добавляются если ввести в body несуществующий id продукта (например -1)</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены </td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-19">BUG-62</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>7</td>
+      <td>Продукты в набор не добавляются если ввести в body несуществующий id продукта (например 114 и 115)</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-7">BUG-63</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>8</td>
+      <td>Продукты в набор не добавляются если ввести в body id продукта в виде строки, а не числа (например "пять" и "семь")</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-8">BUG-64</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>9</td>
+      <td>Продукты в набор не добавляются если ввести в body id продукта в виде строки, а не числа (например "2")</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-20">BUG-65</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>10</td>
+      <td>null в id продукта</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>11</td>
+      <td>Пустое значение в id продукта " "</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-14">BUG-66</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td colspan="5">quantity (в id вводим корректные значения, например - 1 и 5)</td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>12</td>
+      <td>Количество продуктов равное 1</td>
+      <td>Код и статус ответа 200 ОК <br/> Ошибок в структуре ответа нет <br/> Продукты в набор добавлены</td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>13</td>
+      <td>Количество товаров равное 0</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-15">BUG-67</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>14</td>
+      <td>Большое количество одного наименования, например 100 (id товара- 4)</td>
+      <td>Код и статус ответа 200 ОК <br/> Ошибок в структуре ответа нет <br/> Продукты в набор добавлены</td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>15</td>
+      <td>Количество товара дробным числом, например 1.5</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-16">BUG-68</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>16</td>
+      <td>Отрицательное значение в количестве товара, например - 1</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-17">BUG-69</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>17</td>
+      <td>Продукты в набор не добавляются если ввести в body количество продукта в виде строки, а не числа (например "2")</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-21">BUG-70</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>18</td>
+      <td>Количество продуктов в виде строки "три"</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-18">BUG-71</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>19</td>
+      <td>Продукты в набор не добавляются если ввести в body количество продукта в виде булевого значения, а не числа (например, true)</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-9">BUG-72</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>20</td>
+      <td>Ввести null в quantity</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>21</td>
+      <td>Оставить body не заполненным </td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-10">BUG-73</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>22</td>
+      <td>Пустой json {} </td>
+      <td>Код и статус ответа 400 Bad request <br/> <br/> "Не все необходимые параметры были переданы" Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-22">BUG-74</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>23</td>
+      <td>Передать в body объект вместо массива  </td>
+      <td>Код и статус ответа 400 Bad request <br/> "Не все необходимые параметры были переданы" <br/> Ошибок в структуре ответа нет <br/> Продукты в набор не добавлены</td>
+      <td>:x:FAILED</td>
+      <td><p><a href="https://vladislavazakharova.youtrack.cloud/issue/PQA-11">BUG-75</a></p></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td colspan="5">Не более 30 наименований в наборе</td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>24</td>
+      <td>Добавить 30 наименований</td>
+      <td>Код и статус ответа 200 ОК <br/> Ошибок в структуре ответа нет <br/> Продукты добавлены в набор </td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>25</td>
+      <td>Добавить 31 наименование</td>
+      <td>Код и статус ответа 400 Bad request <br/> Ошибок в структуре ответа нет <br/> Не более 30 продуктов в наборе</td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>26</td>
+      <td>Добавить 29 наименований </td>
+      <td>Код и статус ответа 200 ОК <br/> Ошибок в структуре ответа нет <br/> Продукты добавлены в набор</td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td>27</td>
+      <td>Добавить 1 наименование</td>
+      <td>Код и статус ответа 200 ОК <br/> Ошибок в структуре ответа нет <br/> Продукты добавлены в набор</td>
+      <td>:white_check_mark:PASSED</td>
+      <td></td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td colspan="5">
+      <bold><b>Проверка есть ли доставка курьерской службой "Привезем быстро" и сколько она стоит POST /fast-delivery/v3.1.1/calculate-delivery.xml</b></bold>
+      </td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+      <td colspan="5">Время доставки</td>
+    </tr>
+  </tbody>
+</table>
         
 </details>
